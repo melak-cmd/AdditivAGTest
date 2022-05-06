@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ArrayOfProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Product>
+    <Id>1</Id>
+    <Name>Belt-drive</Name>
+    <Price>500</Price>
+    <Value>0</Value>
+  </Product>
+  <Product>
+    <Id>2</Id>
+    <Name>Bearing</Name>
+    <Price>1000</Price>
+    <Value>0</Value>
+  </Product>
+  <Product>
+    <Id>3</Id>
+    <Name>Brake shifter</Name>
+    <Price>1000</Price>
+    <Value>0</Value>
+  </Product>
+</ArrayOfProduct>

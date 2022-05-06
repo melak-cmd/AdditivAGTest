@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1D161CB-E380-4553-8D49-091B3C5586AF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleApp</RootNamespace>
+    <AssemblyName>ConsoleApp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ConsoleApp.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\SerializationHelper.cs" />
+    <Compile Include="Dao\Products.cs" />
+    <Compile Include="Dao\DataAccessObject.cs" />
+    <Compile Include="Models\Basket.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="netfx\System\Guard.cs" />
+    <Compile Include="Printing\PrintingStrategyProduct.cs" />
+    <Compile Include="Printing\PrintingStrategyEmpty.cs" />
+    <Compile Include="Printing\PrintingStrategy.cs" />
+    <Compile Include="Printing\IPrintingStrategy.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Purchasing\PurchasingStrategyDefault.cs" />
+    <Compile Include="Purchasing\PurchasingStrategy.cs" />
+    <Compile Include="Purchasing\IPurchasingStrategy.cs" />
+    <Compile Include="ShopChain\AbstractHandler.cs" />
+    <Compile Include="ShopChain\BasketHandler.cs" />
+    <Compile Include="ShopChain\BudgetHandler.cs" />
+    <Compile Include="ShopChain\PurchasingHandler.cs" />
+    <Compile Include="ShopChain\PrintingHandler.cs" />
+    <Compile Include="ShopChain\IHandler.cs" />
+    <Compile Include="ShopChain\EndHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="products.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
